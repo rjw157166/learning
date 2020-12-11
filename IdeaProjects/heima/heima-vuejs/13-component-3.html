@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <my-list :items="lessons"></my-list>
+</div>
+<script type="text/javascript">
+    const myList={
+        template:'<ul><li v-for="item in items" :key="item.id">{{item.id}}--{{item.name}}</li></ul>',
+        props:{
+            items:{
+                type:Array,
+                default:[]
+            }
+        }
+    }
+
+    Vue.component("myList",myList);
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+            msg:"rjwejrwjer",
+            lessons:[
+                {"id":1,"name":"java"},
+                {"id":2,"name":"php"},
+                {"id":3,"name":"全段"}
+            ]
+        },
+        components:{
+            myList
+        }
+    });
+</script>
+</body>
+</html>

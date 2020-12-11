@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/heima.iml" filepath="$PROJECT_DIR$/.idea/heima.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heima-es6/heima-es6.iml" filepath="$PROJECT_DIR$/heima-es6/heima-es6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heima-vuejs/heima-vuejs.iml" filepath="$PROJECT_DIR$/heima-vuejs/heima-vuejs.iml" />
+    </modules>
+  </component>
+</project>

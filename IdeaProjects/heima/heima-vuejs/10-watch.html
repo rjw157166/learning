@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message">
+    <hr><br>
+    <input type="text" v-model="person.name"><br>
+    <input type="text" v-model="person.age"><button @click="person.age++">+</button>
+    <h2>
+        姓名为：{{person.name}};年龄为:{{person.age}}
+    </h2>
+</div>
+<script type="text/javascript">
+    var app=new Vue({
+        el:"#app",
+        data: {
+            message:"rjw",
+            person:{"name":"hh","age":123}
+        },
+        watch:{
+            message(newValue,oldValue){
+               console.log("新："+newValue+",旧："+oldValue);
+            },
+            person:{
+                deep:true,
+                handler(obj){
+                    console.log("name="+obj.name+"; age="+obj.age)
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

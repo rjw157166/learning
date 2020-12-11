@@ -1,0 +1,11 @@
+server:
+  port: 9091
+Spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://182.92.219.140:3306/springcloud
+    username: root
+    password: root
+
+mybatis:
+  type-aliases-package: com.heima.user.pojo

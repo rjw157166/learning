@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h2>num={{num}}</h2>
+    <counter @plus="numPlus" @reduce="numReduce" :snum="num"></counter>
+</div>
+<script type="text/javascript">
+    const counter={
+        template:`<div><button @click='incrNum'>+</button><button @click='decrNum'>-</button></div>`,
+        props:["snum"],
+        methods:{
+            incrNum(){
+                return this.$emit("plus");
+            },
+            decrNum(){
+                return this.$emit("reduce");
+            }
+        }
+    }
+
+    // Vue.component("myList",myList);
+
+    var app=new Vue({
+        el:"#app",
+        components:{
+            counter:counter
+        },
+        data:{
+            num:0
+        },
+        methods:{
+            numPlus(){
+                this.num++;
+            },
+            numReduce(){
+                this.num--;
+            }
+        }
+    });
+</script>
+</body>
+</html>
